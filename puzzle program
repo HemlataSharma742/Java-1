@@ -1,0 +1,170 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ItemListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JToggleButton; 
+import java.awt.event.*;
+class Puzzle extends WindowAdapter implements ItemListener   {
+	   ImageIcon i1=new ImageIcon("C:\\Users\\rajen\\Desktop\\nature.jpg");
+	   ImageIcon i2=new ImageIcon("C:\\Users\\rajen\\Desktop\\nature.jpg");
+	   ImageIcon i3=new ImageIcon("C:\\Users\\rajen\\Desktop\\nature.jpg");
+	 
+      JToggleButton j=new JToggleButton(new ImageIcon("C:\\Users\\rajen\\Desktop\\nature.jpg"));
+	  JToggleButton j1=new JToggleButton(new ImageIcon("C:\\Users\\rajen\\Desktop\\nature.jpg"));
+	  JToggleButton j2=new JToggleButton(new ImageIcon("C:\\Users\\rajen\\Desktop\\nature.jpg"));
+	  JToggleButton j3=new JToggleButton(new ImageIcon("C:\\Users\\rajen\\Desktop\\nature.jpg"));
+	  JToggleButton j4=new JToggleButton(new ImageIcon("C:\\Users\\rajen\\Desktop\\nature.jpg"));
+	  JToggleButton j5=new JToggleButton(new ImageIcon("C:\\Users\\rajen\\Desktop\\nature.jpg"));
+	  JToggleButton j6=new JToggleButton(new ImageIcon("C:\\Users\\rajen\\Desktop\\nature.jpg"));
+	  JToggleButton j7=new JToggleButton(new ImageIcon("C:\\Users\\rajen\\Desktop\\nature.jpg"));
+	  JToggleButton j8=new JToggleButton(new ImageIcon("C:\\Users\\rajen\\Desktop\\nature.jpg"));
+	  JFrame f=new JFrame("PUZZLE");
+    Puzzle(){
+	
+	f.setSize(900,900);
+	f.setVisible(true);
+	f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	setAction();
+	
+	f.add(j);
+	f.add(j1);
+	f.add(j2);
+	f.add(j3);
+	f.add(j4);
+	f.add(j5);
+	f.add(j6);
+	f.add(j7);
+	f.add(j8);
+	f.setLayout(new GridLayout(3,3));
+	f.addWindowListener(this);
+	
+	}
+	private void setAction(){
+	  j.addItemListener(this);
+	  j1.addItemListener(this);
+	  j2.addItemListener(this);
+	  j3.addItemListener(this);
+	  j4.addItemListener(this);
+	  j5.addItemListener(this);
+	  j6.addItemListener(this);
+	  j7.addItemListener(this);
+	  j8.addItemListener(this);
+	 
+	  
+	}
+    
+	
+	public void itemStateChanged(ItemEvent e){
+		
+		int count=2;
+ for(int i=1;i<=9;i++){
+	if(count==1||count==3||count==5||count==7||count==9){
+		if(e.getSource()==j){
+			
+			j.setIcon(new ImageIcon("C:\\Users\\rajen\\Desktop\\ic11.jpg"));
+			count=count+1;
+		}
+		else if(e.getSource()==j1){
+			
+			j1.setIcon(new ImageIcon("C:\\Users\\rajen\\Desktop\\ic11.jpg"));
+			count=count+1;
+		}
+		else if(e.getSource()==j2){
+			j2.setIcon(new ImageIcon("C:\\Users\\rajen\\Desktop\\ic11.jpg"));
+			
+		     results();
+			 count=count+1;
+		}
+		else if(e.getSource()==j3){
+			j3.setIcon(new ImageIcon("C:\\Users\\rajen\\Desktop\\ic11.jpg"));
+			count=count+1;
+			
+		}
+		else if(e.getSource()==j4){
+			j4.setIcon(new ImageIcon("C:\\Users\\rajen\\Desktop\\ic11.jpg"));
+			count=count+1;
+		}
+		else if(e.getSource()==j5){
+			j5.setIcon(new ImageIcon("C:\\Users\\rajen\\Desktop\\ic11.jpg"));
+			count=count+1;;
+		}
+		else if(e.getSource()==j6){
+			j6.setIcon(new ImageIcon("C:\\Users\\rajen\\Desktop\\ic11.jpg"));
+			count=count+1;
+		}
+		else if(e.getSource()==j7){
+			j7.setIcon(new ImageIcon("C:\\Users\\rajen\\Desktop\\ic11.jpg"));
+			count=count+1;
+		}
+		else if(e.getSource()==j8){
+			j8.setIcon(new ImageIcon("C:\\Users\\rajen\\Desktop\\ic11.jpg"));
+			count=count+1;
+		}
+		
+		
+	}
+    else if(count==2||count==4||count==6||count==8){
+		 if(e.getSource()==j){
+			j.setIcon(new ImageIcon("C:\\Users\\rajen\\Desktop\\ic22.jpg"));
+			count=count+1;
+		}
+		else if(e.getSource()==j1){
+			j1.setIcon(new ImageIcon("C:\\Users\\rajen\\Desktop\\ic22.jpg"));
+			count=count+1;
+			 
+		}
+		else if(e.getSource()==j2){
+			j2.setIcon(new ImageIcon("C:\\Users\\rajen\\Desktop\\ic22.jpg"));
+			
+		      
+			 count=count+1;
+		}
+		else if(e.getSource()==j3){
+			j3.setIcon(new ImageIcon("C:\\Users\\rajen\\Desktop\\ic22.jpg"));
+			count=count+1;
+		}
+		else if(e.getSource()==j4){
+			j4.setIcon(new ImageIcon("C:\\Users\\rajen\\Desktop\\ic22.jpg"));
+			count++;
+		}
+		else if(e.getSource()==j5){
+			j5.setIcon(new ImageIcon("C:\\Users\\rajen\\Desktop\\ic22.jpg"));
+			count++;
+		}
+		else if(e.getSource()==j6){
+			j6.setIcon(new ImageIcon("C:\\Users\\rajen\\Desktop\\ic22.jpg"));
+			count++;
+		}
+		else if(e.getSource()==j7){
+			j7.setIcon(new ImageIcon("C:\\Users\\rajen\\Desktop\\ic22.jpg"));
+			count++;
+		}
+		else if(e.getSource()==j8){
+			j8.setIcon(new ImageIcon("C:\\Users\\rajen\\Desktop\\ic22.jpg"));
+			count++;
+		}
+		
+		
+	}
+   
+}
+}
+	
+	void results(){
+		
+		 Icon a1=j.getIcon();
+		      Icon a2=j1.getIcon();
+		      Icon a3=j2.getIcon();
+		
+	         if((a1.toString().equals(a2.toString()))&&(a1.toString().equals(a3.toString()))){
+			JOptionPane.showMessageDialog(f,"yoy won");
+	}
+	}
+	
+    public static void main(String args[]){
+	  Puzzle o = new Puzzle();
+	  
+	}
+}
+
